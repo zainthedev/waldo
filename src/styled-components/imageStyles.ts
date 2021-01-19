@@ -5,5 +5,5 @@ export const MainImageContainer = styled.div`
 `;
 
 export const MainImage = styled.img`
-    width: 2000px;
+    max-width: 100%;
 `;
