@@ -1,15 +1,14 @@
 import React from 'react';
-import mainImage from './images/main.png'
-import { MainImageContainer, MainImage } from './styled-components/imageStyles'
+import {MainImageContainerComponent} from './components/MainImageContainerComponent'
+import {TooltipComponent} from './components/TooltipComponent'
 import './styles/reset.css';
 import './styles/main.css';
 
 const App = () => {
   return (
     <div className="App">
-      <MainImageContainer>
-        <MainImage src={mainImage}/>
-      </MainImageContainer>
+      <TooltipComponent />
+      <MainImageContainerComponent />
     </div>
   );
 }
