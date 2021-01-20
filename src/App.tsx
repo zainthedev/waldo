@@ -1,16 +1,22 @@
 import React from 'react';
+import { useState } from 'react'
 import {MainImageContainerComponent} from './components/MainImageContainerComponent'
 import {TooltipComponent} from './components/TooltipComponent'
 import './styles/reset.css';
 import './styles/main.css';
 
-const App = () => {
+export default function App() {
+  const [mousePosition, setMousePosition] = useState({x: 0, y: 0})
+
+  const clickHandler = (e: any) => {
+    setMousePosition({x: e.pageX, y: e.pageY});
+  };
+
+
   return (
     <div className="App">
-      <TooltipComponent />
-      <MainImageContainerComponent />
+      <TooltipComponent mousePosition={mousePosition}/>
+      <MainImageContainerComponent clickHandler={clickHandler} />
     </div>
   );
 }
-
-export default App;
