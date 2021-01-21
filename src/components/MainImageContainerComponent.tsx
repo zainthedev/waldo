@@ -1,10 +1,12 @@
 import { MainImageContainer, MainImage } from '../styled-components/imageStyles'
+import { MainImageContainerProps } from '../types'
 import mainImage from '../images/main.jpg'
 
-export const MainImageContainerComponent = (props: any) => {
+
+export const MainImageContainerComponent = ({ handleMousePosition }: MainImageContainerProps) => {
     return (
-        <MainImageContainer onClick={props.clickHandler}>
+        <MainImageContainer onClick={handleMousePosition}>
             <MainImage src={mainImage}/ >
         </MainImageContainer>
     );
-  }
+}
