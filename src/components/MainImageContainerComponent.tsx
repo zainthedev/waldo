@@ -1,7 +1,11 @@
 import { MainImageContainer, MainImage } from '../styled-components/imageStyles'
-import { MainImageContainerProps } from '../types'
 import mainImage from '../images/main.jpg'
 
+export type MainImageContainerProps = {
+    handleMousePosition: (e: React.MouseEvent) => void,
+    pageX?: number,
+    pageY?: number
+}
 
 export const MainImageContainerComponent = ({ handleMousePosition }: MainImageContainerProps) => {
     return (
