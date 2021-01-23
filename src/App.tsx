@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 import {MainImageContainerComponent} from './components/MainImageContainerComponent'
+import {HeaderComponent} from './components/HeaderComponent'
 import {TooltipComponent} from './components/TooltipComponent'
 import './styles/reset.css';
 import './styles/main.css';
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <HeaderComponent />
       <TooltipComponent mousePosition={mousePosition}/>
       <MainImageContainerComponent handleMousePosition={handleMousePosition} />
     </div>
