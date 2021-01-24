@@ -1,19 +1,20 @@
-import { Tooltip, TargetingBox, ChoiceBox } from '../styled-components/tooltipStyles'
+import { Tooltip, TargetingBox, ChoiceBox,ChoiceButton } from '../styled-components/tooltipStyles'
 
 export type TooltipProps = {
     mousePosition: {
         x: number,
         y: number
-    }
+    },
+    handleChoice: (e: React.MouseEvent) => object,
 }
 
-export const TooltipComponent = ({ mousePosition }: TooltipProps) => {
+export const TooltipComponent = ({ mousePosition, handleChoice }: TooltipProps) => {
     return (
     <Tooltip style={{left: mousePosition.x, top: mousePosition.y}}>
         <TargetingBox />
         <ChoiceBox>
-            <button value='Jak' name='character'>Jak</button>
-            <button value='Ratchet' name='character'>Ratchet</button>
-            <button value='Yuna' name='character'>Yuna</button>
+            <ChoiceButton onClick={handleChoice} value='Jak' name='character'>Jak</ChoiceButton>
+            <ChoiceButton onClick={handleChoice} value='Ratchet' name='character'>Ratchet</ChoiceButton>
+            <ChoiceButton onClick={handleChoice} value='Yuna' name='character'>Yuna</ChoiceButton>
         </ChoiceBox>
     </Tooltip>)}
