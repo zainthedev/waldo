@@ -4,6 +4,7 @@ export const Tooltip = styled.div`
     display: flex;
     position: absolute;
     transform: translate(-12%,-50%);
+    z-index: 2;
 `;
 
 export const TargetingBox = styled.div`
