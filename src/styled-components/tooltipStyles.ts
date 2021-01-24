@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const Tooltip = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    transform: translate(-12%,-50%);
+    transform: translate(-50%, -15%);
     z-index: 2;
 `;
 
@@ -16,4 +18,6 @@ export const TargetingBox = styled.div`
 
 export const ChoiceBox = styled.div`
     display: flex;
+    flex-direction: column;
+    background: white;
 `;

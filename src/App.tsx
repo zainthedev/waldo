@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import {MainImageContainerComponent} from './components/MainImageContainerComponent'
 import {HeaderComponent} from './components/HeaderComponent'
-import {TooltipComponent} from './components/TooltipComponent'
+import {TooltipComponent} from './components/TooltipComponent' 
 import './styles/reset.css';
 import './styles/main.css';
 

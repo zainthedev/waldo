@@ -12,8 +12,8 @@ export const TooltipComponent = ({ mousePosition }: TooltipProps) => {
     <Tooltip style={{left: mousePosition.x, top: mousePosition.y}}>
         <TargetingBox />
         <ChoiceBox>
-            <input type='radio' value='Jak' name='character' /> Jak
-            <input type='radio' value='Ratchet' name='character' /> Ratchet
-            <input type='radio' value='Jak' name='character' /> Yuna
+            <button value='Jak' name='character'>Jak</button>
+            <button value='Ratchet' name='character'>Ratchet</button>
+            <button value='Yuna' name='character'>Yuna</button>
         </ChoiceBox>
     </Tooltip>)}

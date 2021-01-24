@@ -1,9 +1,10 @@
 html {
   min-height: 100vh;
   overflow-x: hidden;
+  background: #22222c;
 }
 
-#App {
-    position: relative;
-    overflow-x: hidden;
+.App {
+  position: relative;
+  overflow-x: hidden;
 }
