@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
+import { WelcomeSplashComponent } from './components/WelcomeSplashComponent'
 import {MainImageContainerComponent} from './components/MainImageContainerComponent'
 import {HeaderComponent} from './components/HeaderComponent'
 import {TooltipComponent} from './components/TooltipComponent' 
@@ -37,6 +38,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <WelcomeSplashComponent />
       <HeaderComponent />
       {tagging === true && (
       <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice}/>

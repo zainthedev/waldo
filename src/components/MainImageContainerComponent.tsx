@@ -1,5 +1,5 @@
-import { MainImageContainer, MainImage } from '../styled-components/imageStyles'
-import mainImage from '../images/main.jpg'
+import { MainImageContainer, PS2 } from '../styled-components/imageStyles'
+import ps2Image from '../images/ps2Image.jpg'
 
 export type MainImageContainerProps = {
     handleClick: (e: React.MouseEvent) => void,
@@ -10,7 +10,7 @@ export type MainImageContainerProps = {
 export const MainImageContainerComponent = ({ handleClick }: MainImageContainerProps) => {
     return (
         <MainImageContainer onClick={handleClick}>
-            <MainImage src={mainImage}/ >
+            <PS2 src={ps2Image}/ >
         </MainImageContainer>
     );
 }
