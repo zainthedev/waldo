@@ -2,6 +2,7 @@ html {
   min-height: 100vh;
   overflow-x: hidden;
   background: #22222c;
+  color: white;
   font-family: 'Play', sans-serif;
 }
 

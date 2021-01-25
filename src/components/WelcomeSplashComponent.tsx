@@ -1,8 +1,8 @@
-import { WelcomeSplash, WelcomeText, CharacterContainer, StartButtonContainer } from '../styled-components/welcomeSplashStyles'
-import { CharacterImageContainer, CharacterImage, StartImage } from '../styled-components/imageStyles'
-import jakImage from '../images/jak.png'
-import ratchetImage from '../images/ratchet.png'
-import yunaImage from '../images/yuna.png'
+import { WelcomeSplash, WelcomeText, StartButtonContainer } from '../styled-components/welcomeSplashStyles'
+import { CharacterContainer, CharacterImageContainer, CharacterImage, StartImage } from '../styled-components/imageStyles'
+import jakImage from '../images/jak.svg'
+import ratchetImage from '../images/ratchet.svg'
+import yunaImage from '../images/yuna.svg'
 import startImage from '../images/start.svg'
 
 export type  WelcomeSplashComponentProps = {
