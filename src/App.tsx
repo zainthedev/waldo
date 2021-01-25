@@ -8,6 +8,7 @@ import './styles/reset.css';
 import './styles/main.css';
 
 export default function App() {
+  const [gameStarted, setGameStarted] = useState(false)
   const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
   const [tagging, setTagging] = useState(false);
 
@@ -36,9 +37,15 @@ export default function App() {
     return getClickPosition();
   }
 
+  const startGame = (e: React.MouseEvent): void => {
+    setGameStarted(true)
+  }
+
   return (
     <div className="App">
-      <WelcomeSplashComponent />
+      {gameStarted === false && (
+      <WelcomeSplashComponent startGame={startGame}/>
+      )}
       <HeaderComponent />
       {tagging === true && (
       <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice}/>

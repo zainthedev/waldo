@@ -10,18 +10,22 @@ export const PS2 = styled.img`
 
 export const CharacterImageContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    text-align: center;
     height: fit-content;
     width: fit-content;
 `;
 
-export const Jak = styled.img`
-    height: 20vh;
+export const CharacterImage = styled.img`
+    height: 25vh;
+    @media (max-width: 768px) {
+        height: 20vh;
+    };
 `;
 
-export const Ratchet = styled.img`
-    height: 20vh;
-`;
-
-export const Yuna = styled.img`
-    height: 20vh;
+export const StartImage = styled.img`
+    height: 9vh;
+    @media (max-width: 768px) {
+        height: 8vh;
+    };
 `;
