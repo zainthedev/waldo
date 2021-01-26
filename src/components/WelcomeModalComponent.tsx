@@ -4,11 +4,11 @@ import { StartImage } from '../styled-components/imageStyles';
 import { CharacterContainerComponent } from './CharacterContainerComponent';
 import startImage from '../images/start.svg';
 
-export type  WelcomeModalComponentProps = {
+export type WelcomeModalComponentProps = {
     startGame: (e: React.MouseEvent) => void,
 };
 
-export const WelcomeModalComponent = ({startGame}: WelcomeModalComponentProps) => {
+export const WelcomeModalComponent = ({ startGame }: WelcomeModalComponentProps) => {
     return (
         <WelcomeModal>
             <WelcomeText>
@@ -17,9 +17,9 @@ export const WelcomeModalComponent = ({startGame}: WelcomeModalComponentProps) =
                 {"\n"}Click the character and choose the correct name.
                 {"\n"}You will be timed and your score will be recorded, so move fast!
             </WelcomeText>
-            <CharacterContainerComponent container={'WelcomeSplash'} children={Children}/>
+            <CharacterContainerComponent container={'WelcomeSplash'} children={Children} />
             <StartButtonContainer onClick={startGame}>
-                <StartImage src={startImage}/> Start
+                <StartImage src={startImage} /> Start
             </StartButtonContainer>
         </WelcomeModal>
     );

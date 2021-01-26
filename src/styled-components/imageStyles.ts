@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Header }  from './headerStyles';
+import { Header } from './headerStyles';
 
 export const MainImageContainer = styled.div`
     display: flex;

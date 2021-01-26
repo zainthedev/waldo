@@ -9,3 +9,7 @@ export const Header = styled.div`
     font-size: calc((0.1em + 1vmin) + (0.1em + 1vmax));
     background: #22222c;
 `;
+
+export const Timer = styled.div`
+    display: flex;
+`

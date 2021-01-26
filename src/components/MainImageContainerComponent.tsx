@@ -10,7 +10,7 @@ export type MainImageContainerProps = {
 export const MainImageContainerComponent = ({ handleClick }: MainImageContainerProps) => {
     return (
         <MainImageContainer onClick={handleClick}>
-            <PS2 src={ps2Image}/ >
+            <PS2 src={ps2Image} />
         </MainImageContainer>
     );
 };

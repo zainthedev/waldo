@@ -1,19 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { WelcomeModalComponent } from './components/WelcomeModalComponent';
-import {MainImageContainerComponent} from './components/MainImageContainerComponent';
-import {HeaderComponent} from './components/HeaderComponent';
-import {TooltipComponent} from './components/TooltipComponent';
+import { MainImageContainerComponent } from './components/MainImageContainerComponent';
+import { HeaderComponent } from './components/HeaderComponent';
+import { TooltipComponent } from './components/TooltipComponent';
 import './styles/reset.css';
 import './styles/main.css';
 
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
-  const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [tagging, setTagging] = useState(false);
 
   const handleMousePosition = (e: React.MouseEvent): void => {
-    setMousePosition({x: e.pageX, y: e.pageY});
+    setMousePosition({ x: e.pageX, y: e.pageY });
   };
 
   const getClickPosition = () => {
@@ -44,12 +44,12 @@ export default function App() {
   return (
     <div className="App">
       {gameStarted === false && (
-      <WelcomeModalComponent startGame={startGame}/>
-      )};
-      <HeaderComponent />
+        <WelcomeModalComponent startGame={startGame} />
+      )}
+      <HeaderComponent gameStarted={gameStarted} />
       {tagging === true && (
-      <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice}/>
-      )};
+        <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} />
+      )}
       <MainImageContainerComponent handleClick={handleClick} />
     </div>
   );

@@ -7,26 +7,26 @@ import jakImageHeader from '../images/jakHeader.svg';
 import ratchetImageHeader from '../images/ratchetHeader.svg';
 import yunaImageHeader from '../images/yunaHeader.svg';
 
-export type  CharacterContainerComponentProps = {
+export type CharacterContainerComponentProps = {
     children: ReactChildren,
     container: string,
 };
 
 export const CharacterContainerComponent = ({ container }: CharacterContainerComponentProps) => {
     return (
-            <CharacterContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={container === 'header' ? jakImageHeader : jakImage} />
+        <CharacterContainer>
+            <CharacterImageContainer>
+                <CharacterImage src={container === 'header' ? jakImageHeader : jakImage} />
                     Jak
                 </CharacterImageContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={container === 'header' ? ratchetImageHeader : ratchetImage} />
+            <CharacterImageContainer>
+                <CharacterImage src={container === 'header' ? ratchetImageHeader : ratchetImage} />
                     Ratchet
                 </CharacterImageContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={container === 'header' ? yunaImageHeader: yunaImage} /> 
+            <CharacterImageContainer>
+                <CharacterImage src={container === 'header' ? yunaImageHeader : yunaImage} />
                     Yuna
                 </CharacterImageContainer>
-            </CharacterContainer>
+        </CharacterContainer>
     );
 };
