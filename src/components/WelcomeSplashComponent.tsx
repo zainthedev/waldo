@@ -1,9 +1,8 @@
 import { WelcomeSplash, WelcomeText, StartButtonContainer } from '../styled-components/welcomeSplashStyles'
-import { CharacterContainer, CharacterImageContainer, CharacterImage, StartImage } from '../styled-components/imageStyles'
-import jakImage from '../images/jak.svg'
-import ratchetImage from '../images/ratchet.svg'
-import yunaImage from '../images/yuna.svg'
+import { StartImage } from '../styled-components/imageStyles'
+import { CharacterContainerComponent } from './CharacterContainerComponent'
 import startImage from '../images/start.svg'
+import { Children } from 'react'
 
 export type  WelcomeSplashComponentProps = {
     startGame: (e: React.MouseEvent) => void,
@@ -18,20 +17,7 @@ export const WelcomeSplashComponent = ({startGame}: WelcomeSplashComponentProps)
                 {"\n"}Click the character and choose the correct name.
                 {"\n"}You will be timed and your score will be recorded, so move fast!
             </WelcomeText>
-            <CharacterContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={jakImage} />
-                    Jak
-                </CharacterImageContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={ratchetImage} />
-                    Ratchet
-                </CharacterImageContainer>
-                <CharacterImageContainer>
-                    <CharacterImage src={yunaImage} /> 
-                    Yuna
-                </CharacterImageContainer>
-            </CharacterContainer>
+            <CharacterContainerComponent container={'WelcomeSplash'} children={Children}/>
             <StartButtonContainer onClick={startGame}>
                 <StartImage src={startImage}/> Start
             </StartButtonContainer>
