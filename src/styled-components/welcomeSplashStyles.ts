@@ -17,6 +17,7 @@ export const WelcomeSplash = styled.div`
     background: rgb(99,101,176);
     background: linear-gradient(180deg, rgba(99,101,176,1) 0%, rgba(52,170,231,1) 70%, rgba(56,191,235,1) 100%);
     @media (max-width: 768px) {
+        margin-top: 15px;
         min-height: 100vh;
         min-width: 100vw;
     };
