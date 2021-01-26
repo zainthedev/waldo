@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { WelcomeModalComponent } from './components/WelcomeModalComponent';
 import { MainImageContainerComponent } from './components/MainImageContainerComponent';
@@ -11,6 +10,7 @@ export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [tagging, setTagging] = useState(false);
+  const [playerChoice, setPlayerChoice] = useState({ choiceMade: false, choice: '' })
 
   const handleMousePosition = (e: React.MouseEvent): void => {
     setMousePosition({ x: e.pageX, y: e.pageY });
@@ -28,12 +28,26 @@ export default function App() {
   };
 
   const handleClick = (e: React.MouseEvent): void => {
-    handleTooltipDisplay();
-    handleMousePosition(e);
+    if (playerChoice.choiceMade === false) {
+      handleTooltipDisplay();
+      handleMousePosition(e);
+    }
   };
 
+  const makePlayerChoice = (e: React.MouseEvent): void => {
+    setPlayerChoice({ choiceMade: true, choice: e.currentTarget.textContent || '' });
+
+    // Sets the 'choiceMade' property back to false to hide the 'ChoiceFeedback' component and let the player try again
+    setTimeout(() => {
+      setPlayerChoice({ choiceMade: false, choice: playerChoice.choice });
+    }, 3000);
+  }
+
   const handleChoice = (e: React.MouseEvent): object => {
-    handleTooltipDisplay();
+    if (playerChoice.choiceMade === false) {
+      handleTooltipDisplay();
+      makePlayerChoice(e);
+    }
     return getClickPosition();
   };
 
@@ -47,8 +61,8 @@ export default function App() {
         <WelcomeModalComponent startGame={startGame} />
       )}
       <HeaderComponent gameStarted={gameStarted} />
-      {tagging === true && (
-        <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} />
+      {(tagging === true || playerChoice.choiceMade !== false) && (
+        <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} />
       )}
       <MainImageContainerComponent handleClick={handleClick} />
     </div>

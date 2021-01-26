@@ -17,6 +17,7 @@ export const TargetingBox = styled.div`
     height: 60px;
     width: 60px;
     border: 2px solid #eefbff;
+    border-radius: 5px;
     @media (max-width: 768px) {
         height: 20px;
         width: 20px;
@@ -26,8 +27,8 @@ export const TargetingBox = styled.div`
 export const ChoiceBox = styled.div`
     display: flex;
     flex-direction: column;
-    background: #22222c;
-`;
+    border-radius: 10px;
+    `;
 
 export const ChoiceButton = styled.div`
     display: flex;
@@ -38,7 +39,8 @@ export const ChoiceButton = styled.div`
     padding-left: 8px;
     padding-right: 8px;
     cursor: pointer;
-    background: none;
+    background: #22222c;
+    border-radius: 5px;
     &:hover {
         transition: all 0.1s ease-in-out;
         background-color: #6365b0;
@@ -50,4 +52,9 @@ export const ChoiceButton = styled.div`
 
 export const ChoiceFeedback = styled.div`
     display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: #22222c;
 `
