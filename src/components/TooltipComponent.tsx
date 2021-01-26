@@ -13,9 +13,9 @@ export const TooltipComponent = ({ mousePosition, handleChoice }: TooltipProps) 
         <Tooltip style={{ left: mousePosition.x, top: mousePosition.y }}>
             <TargetingBox />
             <ChoiceBox>
-                <ChoiceButton onClick={handleChoice} value='Jak' name='character'>Jak</ChoiceButton>
-                <ChoiceButton onClick={handleChoice} value='Ratchet' name='character'>Ratchet</ChoiceButton>
-                <ChoiceButton onClick={handleChoice} value='Yuna' name='character'>Yuna</ChoiceButton>
+                <ChoiceButton onClick={handleChoice} >Jak</ChoiceButton>
+                <ChoiceButton onClick={handleChoice} >Ratchet</ChoiceButton>
+                <ChoiceButton onClick={handleChoice} >Yuna</ChoiceButton>
             </ChoiceBox>
         </Tooltip>
     )

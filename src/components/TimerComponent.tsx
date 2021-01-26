@@ -1,5 +1,5 @@
 import { Timer } from '../styled-components/headerStyles';
-import { renderTime } from '../helper-functions/formatTime';
+import { renderTime } from '../helper-functions/renderTime';
 import { useEffect, useState } from 'react';
 import { HeaderComponentProps } from '../types';
 
