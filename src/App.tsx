@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { WelcomeModalComponent } from './components/WelcomeModalComponent';
 import { MainImageContainerComponent } from './components/MainImageContainerComponent';
 import { HeaderComponent } from './components/HeaderComponent';
 import { TooltipComponent } from './components/TooltipComponent';
+import { ChoiceFeedback } from './styled-components/tooltipStyles';
 import './styles/reset.css';
 import './styles/main.css';
 
@@ -28,26 +29,17 @@ export default function App() {
   };
 
   const handleClick = (e: React.MouseEvent): void => {
-    if (playerChoice.choiceMade === false) {
-      handleTooltipDisplay();
-      handleMousePosition(e);
-    }
+    handleTooltipDisplay();
+    handleMousePosition(e);
   };
 
   const makePlayerChoice = (e: React.MouseEvent): void => {
     setPlayerChoice({ choiceMade: true, choice: e.currentTarget.textContent || '' });
-
-    // Sets the 'choiceMade' property back to false to hide the 'ChoiceFeedback' component and let the player try again
-    setTimeout(() => {
-      setPlayerChoice({ choiceMade: false, choice: playerChoice.choice });
-    }, 3000);
   }
 
   const handleChoice = (e: React.MouseEvent): object => {
-    if (playerChoice.choiceMade === false) {
-      handleTooltipDisplay();
-      makePlayerChoice(e);
-    }
+    handleTooltipDisplay();
+    makePlayerChoice(e);
     return getClickPosition();
   };
 
@@ -55,16 +47,27 @@ export default function App() {
     setGameStarted(true)
   };
 
+    // Sets the 'choiceMade' property back to false to hide the 'ChoiceFeedback' component
+    useEffect(() => {
+      const choiceTimer = setTimeout(() => setPlayerChoice({ choiceMade: false, choice: playerChoice.choice }), 3000);
+      return () => clearTimeout(choiceTimer);
+    }, [playerChoice]);
+
   return (
     <div className="App">
       {gameStarted === false && (
         <WelcomeModalComponent startGame={startGame} />
       )}
       <HeaderComponent gameStarted={gameStarted} />
-      {(tagging === true || playerChoice.choiceMade !== false) && (
+      {(tagging === true) && (
         <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} />
       )}
       <MainImageContainerComponent handleClick={handleClick} />
+      {playerChoice.choiceMade && (
+                <ChoiceFeedback>
+                    That's not {playerChoice.choice}. Try again!
+                </ChoiceFeedback>
+            )}
     </div>
   );
 }

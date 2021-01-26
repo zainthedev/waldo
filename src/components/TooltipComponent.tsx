@@ -1,4 +1,4 @@
-import { Tooltip, TargetingBox, ChoiceBox, ChoiceButton, ChoiceFeedback } from '../styled-components/tooltipStyles';
+import { Tooltip, TargetingBox, ChoiceBox, ChoiceButton } from '../styled-components/tooltipStyles';
 
 export type TooltipProps = {
     mousePosition: {
@@ -18,11 +18,6 @@ export const TooltipComponent = ({ mousePosition, handleChoice, playerChoice }: 
                 <ChoiceButton onClick={handleChoice} >Ratchet</ChoiceButton>
                 <ChoiceButton onClick={handleChoice} >Yuna</ChoiceButton>
             </ChoiceBox>
-            {playerChoice.choiceMade && (
-                <ChoiceFeedback>
-                    That's not {playerChoice.choice}. Try again!
-                </ChoiceFeedback>
-            )}
         </Tooltip>
     )
 };
