@@ -1,8 +1,8 @@
-import { WelcomeSplash, WelcomeText, StartButtonContainer } from '../styled-components/welcomeModalStyles'
+import { WelcomeModal, WelcomeText, StartButtonContainer } from '../styled-components/welcomeModalStyles'
+import { Children } from 'react';
 import { StartImage } from '../styled-components/imageStyles';
 import { CharacterContainerComponent } from './CharacterContainerComponent';
 import startImage from '../images/start.svg';
-import { Children } from 'react';
 
 export type  WelcomeModalComponentProps = {
     startGame: (e: React.MouseEvent) => void,
@@ -10,7 +10,7 @@ export type  WelcomeModalComponentProps = {
 
 export const WelcomeModalComponent = ({startGame}: WelcomeModalComponentProps) => {
     return (
-        <WelcomeSplash>
+        <WelcomeModal>
             <WelcomeText>
                 Tag these characters as fast as you can!
                 {"\n"}Scroll through the image to find the correct character.
@@ -21,6 +21,6 @@ export const WelcomeModalComponent = ({startGame}: WelcomeModalComponentProps) =
             <StartButtonContainer onClick={startGame}>
                 <StartImage src={startImage}/> Start
             </StartButtonContainer>
-        </WelcomeSplash>
+        </WelcomeModal>
     );
 };
