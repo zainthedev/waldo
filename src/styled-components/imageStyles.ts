@@ -22,7 +22,7 @@ export const CharacterContainer = styled.div`
         place-content: space-evenly;
 
         @media (max-width: 768px) {
-        width: 100%;
+        width: 80%;
         };
     }
 `;
