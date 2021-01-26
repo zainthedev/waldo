@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Header }  from './headerStyles'
+import { Header }  from './headerStyles';
 
 export const MainImageContainer = styled.div`
     display: flex;
@@ -20,7 +20,7 @@ export const CharacterContainer = styled.div`
         width: 50%;
         flex-direction: row;
         place-content: space-evenly;
-        
+
         @media (max-width: 768px) {
         width: 100%;
         };

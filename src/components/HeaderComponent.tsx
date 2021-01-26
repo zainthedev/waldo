@@ -1,6 +1,6 @@
 import { Children } from 'react';
-import { Header } from '../styled-components/headerStyles'
-import { CharacterContainerComponent } from './CharacterContainerComponent'
+import { Header } from '../styled-components/headerStyles';
+import { CharacterContainerComponent } from './CharacterContainerComponent';
 
 
 export const HeaderComponent = () => {
@@ -9,4 +9,4 @@ export const HeaderComponent = () => {
             <CharacterContainerComponent container={'header'} children={Children}/>
         </Header>
     );
-}
+};

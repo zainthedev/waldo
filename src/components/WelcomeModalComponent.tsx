@@ -1,14 +1,14 @@
-import { WelcomeSplash, WelcomeText, StartButtonContainer } from '../styled-components/welcomeSplashStyles'
-import { StartImage } from '../styled-components/imageStyles'
-import { CharacterContainerComponent } from './CharacterContainerComponent'
-import startImage from '../images/start.svg'
-import { Children } from 'react'
+import { WelcomeSplash, WelcomeText, StartButtonContainer } from '../styled-components/welcomeModalStyles'
+import { StartImage } from '../styled-components/imageStyles';
+import { CharacterContainerComponent } from './CharacterContainerComponent';
+import startImage from '../images/start.svg';
+import { Children } from 'react';
 
-export type  WelcomeSplashComponentProps = {
+export type  WelcomeModalComponentProps = {
     startGame: (e: React.MouseEvent) => void,
-}
+};
 
-export const WelcomeSplashComponent = ({startGame}: WelcomeSplashComponentProps) => {
+export const WelcomeModalComponent = ({startGame}: WelcomeModalComponentProps) => {
     return (
         <WelcomeSplash>
             <WelcomeText>
@@ -23,4 +23,4 @@ export const WelcomeSplashComponent = ({startGame}: WelcomeSplashComponentProps)
             </StartButtonContainer>
         </WelcomeSplash>
     );
-}
+};
