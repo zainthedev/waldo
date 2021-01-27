@@ -4,19 +4,25 @@ import { MainImageContainerComponent } from './components/MainImageContainerComp
 import { HeaderComponent } from './components/HeaderComponent';
 import { TooltipComponent } from './components/TooltipComponent';
 import { ChoiceFeedback } from './styled-components/tooltipStyles';
+import { ScoreScreenModalComponent } from './components/ScoreScreenModalComponent';
 import './styles/reset.css';
 import './styles/main.css';
 
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameOver, setGameOver] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [tagging, setTagging] = useState(false);
   const [playerChoice, setPlayerChoice] = useState({ choiceMade: false, choice: '' })
 
+  // Set the current mouse position as the clicked position
+  // Used for controlling the positioning of the tooltip
   const handleMousePosition = (e: React.MouseEvent): void => {
     setMousePosition({ x: e.pageX, y: e.pageY });
   };
 
+  // Get the click position of the mouse and convert it to units that are equal regardless of screen size
+  // Used for the backend
   const getClickPosition = () => {
     return {
       x: Math.round((mousePosition.x / window.innerWidth) * 100),
@@ -24,6 +30,7 @@ export default function App() {
     };
   };
 
+  // Display/hide the tooltip based on if tagging a character
   const handleTooltipDisplay = () => {
     tagging ? setTagging(false) : setTagging(true);
   };
@@ -43,7 +50,7 @@ export default function App() {
     return getClickPosition();
   };
 
-  const startGame = (e: React.MouseEvent): void => {
+  const startGame = (): void => {
     setGameStarted(true)
   };
 
@@ -62,12 +69,15 @@ export default function App() {
       {(tagging === true) && (
         <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} />
       )}
-      <MainImageContainerComponent handleClick={handleClick} />
       {playerChoice.choiceMade && (
-                <ChoiceFeedback>
-                    That's not {playerChoice.choice}. Try again!
-                </ChoiceFeedback>
-            )}
+        <ChoiceFeedback>
+          That's not {playerChoice.choice}. Try again!
+        </ChoiceFeedback>
+      )}
+      <MainImageContainerComponent handleClick={handleClick} />
+      {gameOver === true && (
+      <ScoreScreenModalComponent gameStarted={gameStarted}/>
+      )}
     </div>
   );
 }

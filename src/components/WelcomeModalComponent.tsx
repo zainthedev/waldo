@@ -1,4 +1,5 @@
-import { WelcomeModal, WelcomeText, StartButtonContainer } from '../styled-components/welcomeModalStyles'
+import { Modal } from '../styled-components/modalStyles';
+import { WelcomeText, StartButtonContainer } from '../styled-components/welcomeModalStyles';
 import { Children } from 'react';
 import { StartImage } from '../styled-components/imageStyles';
 import { CharacterContainerComponent } from './CharacterContainerComponent';
@@ -10,7 +11,7 @@ export type WelcomeModalComponentProps = {
 
 export const WelcomeModalComponent = ({ startGame }: WelcomeModalComponentProps) => {
     return (
-        <WelcomeModal>
+        <Modal>
             <WelcomeText>
                 Tag these characters as fast as you can!
                 {"\n"}Scroll through the image to find the correct character.
@@ -21,6 +22,6 @@ export const WelcomeModalComponent = ({ startGame }: WelcomeModalComponentProps)
             <StartButtonContainer onClick={startGame}>
                 <StartImage src={startImage} /> Start
             </StartButtonContainer>
-        </WelcomeModal>
+        </Modal>
     );
 };

@@ -10,6 +10,7 @@ export const TimerComponent = ({ gameStarted }: HeaderComponentProps) => {
         setTime(time + 1)
     }
 
+    // Increase the total time taken by 1 second accordingly
     useEffect(() => {
         if (gameStarted) {
             setTimeout(() => {
