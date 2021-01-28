@@ -1,6 +1,7 @@
 import { Modal } from '../styled-components/modalStyles';
-import { PlayerScoreDisplay, PlayerNameInput, NameSubmitButton, ScoreBoard } from '../styled-components/scoreScreenModalStyles'
-import { TimerComponent } from './TimerComponent'
+import { PlayerScoreDisplay, PlayerNameInput, NameSubmitButton } from '../styled-components/scoreScreenModalStyles';
+import { TimerComponent } from './TimerComponent';
+import { ScoreboardComponent } from './ScoreboardComponent';
 import { HeaderComponentProps } from '../types';
 
 export const ScoreScreenModalComponent = ({ gameStarted }: HeaderComponentProps) => {
@@ -14,7 +15,7 @@ export const ScoreScreenModalComponent = ({ gameStarted }: HeaderComponentProps)
             <NameSubmitButton>
                 Submit
             </NameSubmitButton>
-            <ScoreBoard />
+            <ScoreboardComponent />
         </Modal>
     );
 };
