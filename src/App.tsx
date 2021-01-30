@@ -15,6 +15,21 @@ export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [tagging, setTagging] = useState(false);
   const [playerChoice, setPlayerChoice] = useState({ correctChoice: false, choiceMade: false, choice: '' })
+  const [remainingCharacters, setRemainingCharacters] = useState(['Jak', 'Ratchet', 'Yuna'])
+  const [time, setTime] = useState(0)
+
+  function increaseTime() {
+    setTime(time + 1)
+  }
+
+  // Increase the total time taken by 1 second accordingly
+  useEffect(() => {
+    if (gameStarted && !gameOver) {
+      setTimeout(() => {
+        increaseTime()
+      }, 1000);
+    };
+  });
 
   // Set the current mouse position as the clicked position
   // Used for controlling the positioning of the tooltip
@@ -50,22 +65,28 @@ export default function App() {
     }
   }
 
-  const handleClick = (e: React.MouseEvent): void => {
-    handleTooltipDisplay();
-    handleMousePosition(e);
-  };
 
   const makePlayerChoiceState = async (e: React.MouseEvent): Promise<void> => {
     const targetCharacter = e.currentTarget.textContent || ''
-    const correctChoice = await checkForMatch(mousePosition.x, mousePosition.y, targetCharacter)
+    // Returns TRUE if choice was correct
+    const choiceEvaluation = await checkForMatch(mousePosition.x, mousePosition.y, targetCharacter)
 
-    if (correctChoice) {
+    if (choiceEvaluation) {
+      const newRemainingCharacters = [...remainingCharacters];
+      newRemainingCharacters.splice(newRemainingCharacters.indexOf(targetCharacter), 1)
       setPlayerChoice({ correctChoice: true, choiceMade: true, choice: targetCharacter });
+      setRemainingCharacters(newRemainingCharacters);
+      console.log(remainingCharacters)
     }
     else {
       setPlayerChoice({ correctChoice: false, choiceMade: true, choice: targetCharacter });
     }
   }
+
+  const handleClick = (e: React.MouseEvent): void => {
+    handleTooltipDisplay();
+    handleMousePosition(e);
+  };
 
   const handleChoice = (e: React.MouseEvent): any => {
     handleTooltipDisplay();
@@ -76,18 +97,24 @@ export default function App() {
     setGameStarted(true)
   };
 
-  // Sets the 'choiceMade' property back to false to hide the 'ChoiceFeedback' component
+  // Sets the choiceMade property back to false to hide the 'ChoiceFeedback' component
   useEffect(() => {
     const choiceTimer = setTimeout(() => setPlayerChoice({ correctChoice: false, choiceMade: false, choice: playerChoice.choice }), 3000);
     return () => clearTimeout(choiceTimer);
   }, [playerChoice]);
+
+  useEffect(() => {
+    if (remainingCharacters.length === 0) {
+      setGameOver(true)
+    }
+  }, [remainingCharacters.length]);
 
   return (
     <div className="App">
       {gameStarted === false && (
         <WelcomeModalComponent startGame={startGame} />
       )}
-      <HeaderComponent gameStarted={gameStarted} />
+      <HeaderComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
       {(tagging === true) && (
         <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} />
       )}
@@ -98,7 +125,7 @@ export default function App() {
       )}
       <MainImageContainerComponent handleClick={handleClick} />
       {gameOver === true && (
-        <ScoreScreenModalComponent gameStarted={gameStarted} />
+        <ScoreScreenModalComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
       )}
     </div>
   );

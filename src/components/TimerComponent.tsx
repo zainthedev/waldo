@@ -1,24 +1,8 @@
 import { Timer } from '../styled-components/headerStyles';
 import { renderTime } from '../helper-functions/renderTime';
-import { useEffect, useState } from 'react';
 import { HeaderComponentProps } from '../types';
 
-export const TimerComponent = ({ gameStarted }: HeaderComponentProps) => {
-    const [time, setTime] = useState(0)
-
-    function increaseTime() {
-        setTime(time + 1)
-    }
-
-    // Increase the total time taken by 1 second accordingly
-    useEffect(() => {
-        if (gameStarted) {
-            setTimeout(() => {
-                increaseTime()
-            }, 1000);
-        };
-    });
-
+export const TimerComponent = ({ time, gameStarted, gameOver }: HeaderComponentProps) => {
     return (
         <Timer>
             {renderTime(time)}

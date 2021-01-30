@@ -4,12 +4,12 @@ import { TimerComponent } from './TimerComponent';
 import { ScoreboardComponent } from './ScoreboardComponent';
 import { HeaderComponentProps } from '../types';
 
-export const ScoreScreenModalComponent = ({ gameStarted }: HeaderComponentProps) => {
+export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: HeaderComponentProps) => {
     return (
         <Modal>
             <PlayerScoreDisplay>
                 YOUR TIME:
-                < TimerComponent gameStarted={gameStarted} />
+                < TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
             </PlayerScoreDisplay>
             <PlayerNameInput />
             <NameSubmitButton>
