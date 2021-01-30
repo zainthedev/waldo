@@ -18,18 +18,9 @@ export default function App() {
   const [remainingCharacters, setRemainingCharacters] = useState(['Jak', 'Ratchet', 'Yuna'])
   const [time, setTime] = useState(0)
 
-  function increaseTime() {
+  const increaseTime = () => {
     setTime(time + 1)
   }
-
-  // Increase the total time taken by 1 second accordingly
-  useEffect(() => {
-    if (gameStarted && !gameOver) {
-      setTimeout(() => {
-        increaseTime()
-      }, 1000);
-    };
-  });
 
   // Set the current mouse position as the clicked position
   // Used for controlling the positioning of the tooltip
@@ -103,11 +94,21 @@ export default function App() {
     return () => clearTimeout(choiceTimer);
   }, [playerChoice]);
 
+  // Ends the game when there are no remaining characters to be found
   useEffect(() => {
     if (remainingCharacters.length === 0) {
       setGameOver(true)
     }
   }, [remainingCharacters.length]);
+
+  // Increase the total time taken by 1 second accordingly
+  useEffect(() => {
+    if (gameStarted && !gameOver) {
+      setTimeout(() => {
+        increaseTime()
+      }, 1000);
+    };
+  });
 
   return (
     <div className="App">

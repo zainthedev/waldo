@@ -21,12 +21,3 @@ ReactDOM.render(
   </FirebaseAppProvider>,
   document.getElementById('root')
 );
-
-
-//Try this if the above doesn't work
-//ReactDOM.createRoot(document.getElementById('root')).render(
-  // <StrictMode>
-  //   <FirebaseAppProvider firebaseConfig={config}>
-  //     <App />
-  //   </FirebaseAppProvider>
-  // </StrictMode>
