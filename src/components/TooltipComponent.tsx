@@ -5,7 +5,7 @@ export type TooltipProps = {
         x: number,
         y: number
     },
-    handleChoice: (e: React.MouseEvent) => object,
+    handleChoice: (e: React.MouseEvent) => void,
     playerChoice: { choiceMade: boolean, choice: string }
 };
 
