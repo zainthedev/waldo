@@ -45,14 +45,13 @@ export default function App() {
     const ratchetResult = await ratchetPositionsPromise;
     const yunaResult = await yunaPositionsPromise;
 
-    if (character === 'Jak' && jakResult.positions.includes(coords)) {
-      return jakResult.positions.includes(coords)
-    }
-    else if (character === 'Ratchet') {
-      return ratchetResult.positions.includes(coords)
-    }
-    else {
-      return yunaResult.positions.includes(coords)
+    switch (character) {
+      case 'Jak':
+        return jakResult.positions.includes(coords)
+      case 'Ratchet':
+        return ratchetResult.positions.includes(coords)
+      case 'Yuna':
+        return yunaResult.positions.includes(coords)
     }
   }
 
