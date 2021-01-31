@@ -116,7 +116,7 @@ export default function App() {
       )}
       <HeaderComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
       {(tagging === true) && (
-        <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} />
+        <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} remainingCharacters={remainingCharacters} />
       )}
       {playerChoice.choiceMade && (
         <ChoiceFeedback>

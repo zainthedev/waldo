@@ -7,16 +7,17 @@ export type TooltipProps = {
     },
     handleChoice: (e: React.MouseEvent) => void,
     playerChoice: { choiceMade: boolean, choice: string }
+    remainingCharacters: string[];
 };
 
-export const TooltipComponent = ({ mousePosition, handleChoice, playerChoice }: TooltipProps) => {
+export const TooltipComponent = ({ mousePosition, handleChoice, remainingCharacters }: TooltipProps) => {
     return (
         <Tooltip style={{ left: mousePosition.x, top: mousePosition.y }}>
             <TargetingBox />
             <ChoiceBox>
-                <ChoiceButton onClick={handleChoice} >Jak</ChoiceButton>
-                <ChoiceButton onClick={handleChoice} >Ratchet</ChoiceButton>
-                <ChoiceButton onClick={handleChoice} >Yuna</ChoiceButton>
+                {remainingCharacters.map((character) => {
+                    return <ChoiceButton onClick={handleChoice} >{character}</ChoiceButton>
+                })}
             </ChoiceBox>
         </Tooltip>
     )
