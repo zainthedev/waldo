@@ -17,7 +17,7 @@ export const PlayerScoreDisplay = styled.div`
     justify-content: space-evenly;
     font-size: calc((0.2em + 0.6vmin) + (0.2em + 0.6vmax));
     width: 80%;
-    height: 30%;
+    height: 40%;
 `
 
 
@@ -26,6 +26,12 @@ export const PlayerNameInput = styled.input`
     border-radius: 5px;
     font-size: calc((0.2em + 0.6vmin) + (0.2em +0.6vmax));
     text-align: center;
+`
+
+export const InputErrorText = styled.div`
+    display: flex;
+    text-align: center;
+    color: #EB6438;
 `
 
 export const NameSubmitButton = styled.div`
@@ -53,7 +59,7 @@ export const Scoreboard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 90%;
-    height: 60%;
+    height: 50%;
     box-shadow: 0px 5px 8px 0px rgb(99 101 176);
     border-radius: 5px;
     padding: 15px;
