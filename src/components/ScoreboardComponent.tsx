@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { Scoreboard } from '../styled-components/scoreScreenModalStyles';
+import { Scoreboard, Score } from '../styled-components/scoreScreenModalStyles';
 import { useFirestore } from 'reactfire';
+import { renderTime } from '../helper-functions/renderTime';
 
 export const ScoreboardComponent = () => {
     const [users, setUsers] = useState([])
 
     const usersQuery = useFirestore()
-        .collection('users')
+        .collection('users').orderBy('time', 'asc')
 
     //Start listening to the query.
     usersQuery.onSnapshot(
@@ -27,7 +28,10 @@ export const ScoreboardComponent = () => {
     return (
         <Scoreboard>
             {users.map((user: any) => {
-                return <div>Name: {user.name}, Time: {user.time}</div>;
+                return (<Score>
+                    <div>{user.name}</div>
+                    <div>{renderTime(user.time)}</div>
+                </Score>)
             })}
         </Scoreboard>
     );
