@@ -50,8 +50,8 @@ export const CharacterImage = styled.img`
     border-radius: 50%;
     object-fit: cover;
         @media (max-width: 768px) {
-            height: 8vh;
-            width: 8vh;
+            height: calc(3vh + 7vw);
+            width: calc(3vh + 7vw);
         };
     }
 
