@@ -28,12 +28,13 @@ export const ScoreboardComponent = () => {
     return (
         <Scoreboard>
             HIGH SCORES
-            {users.map((user: any) => {
-                return (<Score>
-                    <div>{user.name}</div>
-                    <div>{renderTime(user.time)}</div>
-                </Score>)
-            })}
+            {users.length === 1 || 0 ? <div>Loading...</div> :
+                users.map((user: any) => {
+                    return (<Score>
+                        <div>{user.name}</div>
+                        <div>{renderTime(user.time)}</div>
+                    </Score>)
+                })}
         </Scoreboard>
     );
 };
