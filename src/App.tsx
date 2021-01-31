@@ -123,7 +123,7 @@ export default function App() {
           {playerChoice.correctChoice === true ? `You found ${playerChoice.choice}. Nice!` : `Thats not ${playerChoice.choice}. Try again!`}
         </ChoiceFeedback>
       )}
-      <MainImageContainerComponent handleClick={handleClick} />
+      {gameStarted === true && gameOver === false && <MainImageContainerComponent handleClick={handleClick} />}
       {gameOver === true && (
         <ScoreScreenModalComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
       )}
