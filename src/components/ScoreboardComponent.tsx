@@ -27,6 +27,7 @@ export const ScoreboardComponent = () => {
 
     return (
         <Scoreboard>
+            HIGH SCORES
             {users.map((user: any) => {
                 return (<Score>
                     <div>{user.name}</div>
