@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import { Scoreboard, Score } from '../styled-components/scoreScreenModalStyles';
 import { useFirestore } from 'reactfire';
-import { renderTime } from '../helper-functions/renderTime';
+import { Scoreboard, Score, PlayerScore } from '../styled-components/scoreScreenModalStyles';
+import { ScoreComponent } from './ScoreComponent';
 
-export const ScoreboardComponent = () => {
-    const [users, setUsers] = useState([])
+export type ScoreboardComponentProps = {
+    playerName: string,
+};
 
-    const usersQuery = useFirestore()
-        .collection('users').orderBy('time', 'asc')
+export const ScoreboardComponent = ({ playerName }: ScoreboardComponentProps) => {
+    const [users, setUsers] = useState([]);
 
-    //Start listening to the query.
+    //Create the query to load the users and listen for new ones
+    const usersQuery = useFirestore().collection('users').orderBy('time', 'asc').limit(10);
+
+    //Start listening to the query
     usersQuery.onSnapshot(
         (snapshot) => {
             let userArray: any = []
@@ -17,23 +21,27 @@ export const ScoreboardComponent = () => {
                 const user = {
                     name: change.doc.data().name,
                     time: change.doc.data().time,
-                }
+                };
                 if (change.type === 'added') {
                     userArray.push(user);
-                }
-            })
-            setUsers(userArray)
-        })
+                };
+            });
+            setUsers(userArray);
+        });
 
     return (
         <Scoreboard>
             HIGH SCORES
             {users.length === 1 || 0 ? <div>Loading...</div> :
                 users.map((user: any) => {
-                    return (<Score>
-                        <div>{user.name}</div>
-                        <div>{renderTime(user.time)}</div>
-                    </Score>)
+                    return user.name === playerName ?
+                        <PlayerScore>
+                            <ScoreComponent user={user} />
+                        </PlayerScore>
+                        :
+                        <Score>
+                            <ScoreComponent user={user} />
+                        </Score>
                 })}
         </Scoreboard>
     );

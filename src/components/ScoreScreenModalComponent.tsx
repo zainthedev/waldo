@@ -1,9 +1,9 @@
+import { useState } from 'react';
+import { useFirestore } from 'reactfire';
 import { Modal } from '../styled-components/modalStyles';
 import { ScoreScreenWrapper, PlayerScoreDisplay, PlayerNameInput, InputErrorText, NameSubmitButton } from '../styled-components/scoreScreenModalStyles';
 import { TimerComponent } from './TimerComponent';
-import { useFirestore } from 'reactfire';
 import { ScoreboardComponent } from './ScoreboardComponent';
-import { useState } from 'react';
 import { checkForBadWords } from '../helper-functions/checkForBadWords';
 
 export type ScoreboardModalComponentProps = {
@@ -22,7 +22,7 @@ export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: Score
     const addUser = async () => {
         if (nameSubmitted === false) {
             await userCollection.doc(playerName).set({ name: playerName.toString(), time: time }, { merge: true });
-        }
+        };
     };
 
     const handleSubmit = () => {
@@ -49,7 +49,7 @@ export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: Score
                 <PlayerScoreDisplay>
                     YOUR TIME:
                 < TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
-                    {nameSubmitted === false && (
+                    {nameSubmitted === false ? (
                         <>
                             Enter your name:
                     <PlayerNameInput onChange={handlePlayerName} placeholder={'Enter name'} />
@@ -61,9 +61,9 @@ export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: Score
                                     {inputError.badWord === true ? `Nice try` : `Name too long (Max 20 characters)`}
                                 </InputErrorText>}
                         </>
-                    )}
+                    ) : 'Thanks for playing!'}
                 </PlayerScoreDisplay>
-                <ScoreboardComponent />
+                <ScoreboardComponent playerName={playerName} />
             </ScoreScreenWrapper >
         </Modal>
     );

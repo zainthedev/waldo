@@ -84,4 +84,8 @@ export const Score = styled.div`
     border-bottom: solid 2px rgba(99,101,176,1);
     padding-top: 8px;
     padding-bottom: 8px;
-`
+`;
+
+export const PlayerScore = styled(Score)`
+    text-shadow: 0px 0px 4px #ebe450;
+`;
