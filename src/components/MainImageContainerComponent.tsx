@@ -1,5 +1,5 @@
 import { MainImageContainer, PS2 } from '../styled-components/imageStyles';
-import ps2Image from '../images/ps2Image.webp';
+import ps2Image from '../images/ps2Image.jpg';
 
 export type MainImageContainerProps = {
     handleClick: (e: React.MouseEvent) => void,
