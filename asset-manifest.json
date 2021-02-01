@@ -5,8 +5,8 @@
     "functions.js": "/waldo/static/js/functions.70df6cba.chunk.js",
     "functions.js.map": "/waldo/static/js/functions.70df6cba.chunk.js.map",
     "main.css": "/waldo/static/css/main.07525548.chunk.css",
-    "main.js": "/waldo/static/js/main.23a83145.chunk.js",
-    "main.js.map": "/waldo/static/js/main.23a83145.chunk.js.map",
+    "main.js": "/waldo/static/js/main.4056700b.chunk.js",
+    "main.js.map": "/waldo/static/js/main.4056700b.chunk.js.map",
     "runtime-main.js": "/waldo/static/js/runtime-main.41c150a6.js",
     "runtime-main.js.map": "/waldo/static/js/runtime-main.41c150a6.js.map",
     "static/js/4.ba02c587.chunk.js": "/waldo/static/js/4.ba02c587.chunk.js",
@@ -49,6 +49,6 @@
     "static/js/runtime-main.41c150a6.js",
     "static/js/4.ba02c587.chunk.js",
     "static/css/main.07525548.chunk.css",
-    "static/js/main.23a83145.chunk.js"
+    "static/js/main.4056700b.chunk.js"
   ]
 }
