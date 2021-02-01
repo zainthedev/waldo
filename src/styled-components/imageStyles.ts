@@ -7,6 +7,9 @@ export const MainImageContainer = styled.div`
 
 export const PS2 = styled.img`
     max-width: 100%;
+    @media (max-width: 768px) {
+        width: 4320px;
+        };
 `;
 
 export const CharacterContainer = styled.div`
