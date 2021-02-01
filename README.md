@@ -51,7 +51,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Reflection
 
-  This was a project built for The Odin Project to show off the skills that I have learned thus far, as well as an opportunity to learn TypeScript and styled-components. TypeScript is outside of the scope of The Odin Project, and as such, my learning was 100% self-directed. 
+  This was a project built for The Odin Project (TOP) to show off the skills that I have learned thus far, as well as an opportunity to learn TypeScript and styled-components. TypeScript is outside of the scope of The Odin Project, and as such, my learning was 100% self-directed, as opposed to the point in the right direction towards useful resources that TOP gives.
   
   Implementing TypeScript was daunting at first, but after a day or two, I grew to enjoy it and now feel fairly comfortable - there's still much left to learn, however.
   
