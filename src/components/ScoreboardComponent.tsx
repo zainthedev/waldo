@@ -36,11 +36,11 @@ export const ScoreboardComponent = ({ playerName }: ScoreboardComponentProps) =>
                 users.map((user: any) => {
                     return user.name === playerName ?
                         <PlayerScore>
-                            <ScoreComponent user={user} />
+                            <ScoreComponent key={user.name} user={user} />
                         </PlayerScore>
                         :
                         <Score>
-                            <ScoreComponent user={user} />
+                            <ScoreComponent key={user.name} user={user} />
                         </Score>
                 })}
         </Scoreboard>
