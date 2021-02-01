@@ -16,7 +16,7 @@ export const TooltipComponent = ({ mousePosition, handleChoice, remainingCharact
             <TargetingBox />
             <ChoiceBox>
                 {remainingCharacters.map((character) => {
-                    return <ChoiceButton onClick={handleChoice} >{character}</ChoiceButton>
+                    return <ChoiceButton key={character} onClick={handleChoice} >{character}</ChoiceButton>
                 })}
             </ChoiceBox>
         </Tooltip>
