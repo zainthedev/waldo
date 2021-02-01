@@ -1,7 +1,5 @@
 ## Waldo (A Photo Tagging App)
 
-Waldo
-
 Based on Where's Waldo (or Where's Wally), this is a photo-tagging game in which you need to search for and tag the 3 characters.
 Players are timed and their score is kept.
 The top 10 fastest players get their names displayed on the scoreboard at the end.
