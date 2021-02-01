@@ -40,7 +40,6 @@ export const CharacterImageContainer = styled.div`
     }
 `;
 
-//Todo: Apply border to header image once character is found
 export const CharacterImage = styled.img`
     height: calc(5vh + 10vw);
     
