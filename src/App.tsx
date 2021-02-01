@@ -74,8 +74,10 @@ export default function App() {
   }
 
   const handleClick = (e: React.MouseEvent): void => {
-    handleTooltipDisplay();
-    handleMousePosition(e);
+    if (gameStarted) {
+      handleTooltipDisplay();
+      handleMousePosition(e);
+    }
   };
 
   const handleChoice = (e: React.MouseEvent): any => {
@@ -111,20 +113,20 @@ export default function App() {
 
   return (
     <div className="App">
-      {gameStarted === false && (
+      {!gameStarted && (
         <WelcomeModalComponent startGame={startGame} />
       )}
       <HeaderComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
-      {(tagging === true) && (
+      {tagging && (
         <TooltipComponent mousePosition={mousePosition} handleChoice={handleChoice} playerChoice={playerChoice} remainingCharacters={remainingCharacters} />
       )}
-      {playerChoice.choiceMade && (
+      {playerChoice.choiceMade && !gameOver && (
         <ChoiceFeedback>
-          {playerChoice.correctChoice === true ? `You found ${playerChoice.choice}. Nice!` : `Thats not ${playerChoice.choice}. Try again!`}
+          {playerChoice.correctChoice ? `You found ${playerChoice.choice}. Nice!` : `Thats not ${playerChoice.choice}. Try again!`}
         </ChoiceFeedback>
       )}
-      {gameStarted === true && gameOver === false && <MainImageContainerComponent handleClick={handleClick} />}
-      {gameOver === true && (
+      {!gameOver && <MainImageContainerComponent handleClick={handleClick} />}
+      {gameOver && (
         <ScoreScreenModalComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
       )}
     </div>

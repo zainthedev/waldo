@@ -8,7 +8,7 @@ export const HeaderComponent = ({ time, gameStarted, gameOver }: HeaderComponent
     return (
         <Header>
             <CharacterContainerComponent container={'header'} children={Children} />
-            {gameStarted === true && (
+            {gameStarted && (
                 <TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
             )}
         </Header>

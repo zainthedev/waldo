@@ -49,10 +49,10 @@ export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: Score
                 <PlayerScoreDisplay>
                     YOUR TIME:
                 < TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
-                    {nameSubmitted === false ? (
+                    {!nameSubmitted ? (
                         <>
                             Enter your name:
-                    <PlayerNameInput onChange={handlePlayerName} placeholder={'Enter name'} />
+                            <PlayerNameInput onChange={handlePlayerName} placeholder={'Enter name'} />
                             <NameSubmitButton onClick={handleSubmit}>
                                 Submit
                             </NameSubmitButton>
