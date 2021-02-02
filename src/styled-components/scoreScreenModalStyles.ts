@@ -24,8 +24,11 @@ export const PlayerScoreDisplay = styled.div`
 export const PlayerNameInput = styled.input`
     border: none;
     border-radius: 5px;
-    font-size: calc((0.2em + 0.6vmin) + (0.2em +0.6vmax));
+    font-size: calc((0.2em + 0.6vmin) + (0.2em + 0.6vmax));
     text-align: center;
+    @media (max-width: 768px) {
+        font-size: calc((0.2em + 1vmin) + (0.2em + 1vmax));
+    };
 `
 
 export const InputErrorText = styled.div`
