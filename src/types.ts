@@ -1,5 +1,5 @@
 export type HeaderProps = {
-    time: number,
-    gameStarted: boolean,
-    gameOver: boolean,
+	time: number;
+	gameStarted: boolean;
+	gameOver: boolean;
 };

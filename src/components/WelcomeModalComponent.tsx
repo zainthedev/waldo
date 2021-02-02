@@ -6,22 +6,22 @@ import { CharacterContainerComponent } from './CharacterContainerComponent';
 import startImage from '../images/start.svg';
 
 export type WelcomeModalProps = {
-    startGame: (e: React.MouseEvent) => void,
+	startGame: (e: React.MouseEvent) => void;
 };
 
 export const WelcomeModalComponent = ({ startGame }: WelcomeModalProps) => {
-    return (
-        <Modal>
-            <WelcomeText>
-                Tag these characters as fast as you can!
-                {"\n"}Scroll through the image to find the correct character.
-                {"\n"}Click the character and choose the correct name.
-                {"\n"}You will be timed and your score will be recorded, so move fast!
-            </WelcomeText>
-            <CharacterContainerComponent container={'WelcomeSplash'} children={Children} />
-            <StartButtonContainer onClick={startGame}>
-                <StartImage src={startImage} /> Start
-            </StartButtonContainer>
-        </Modal>
-    );
+	return (
+		<Modal>
+			<WelcomeText>
+				Tag these characters as fast as you can!
+				{'\n'}Scroll through the image to find the correct character.
+				{'\n'}Click the character and choose the correct name.
+				{'\n'}You will be timed and your score will be recorded, so move fast!
+			</WelcomeText>
+			<CharacterContainerComponent container={'WelcomeSplash'} children={Children} />
+			<StartButtonContainer onClick={startGame}>
+				<StartImage src={startImage} /> Start
+			</StartButtonContainer>
+		</Modal>
+	);
 };

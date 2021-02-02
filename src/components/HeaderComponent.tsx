@@ -5,12 +5,10 @@ import { CharacterContainerComponent } from './CharacterContainerComponent';
 import { HeaderProps } from '../types';
 
 export const HeaderComponent = ({ time, gameStarted, gameOver }: HeaderProps) => {
-    return (
-        <Header>
-            <CharacterContainerComponent container={'header'} children={Children} />
-            {gameStarted && (
-                <TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
-            )}
-        </Header>
-    );
+	return (
+		<Header>
+			<CharacterContainerComponent container={'header'} children={Children} />
+			{gameStarted && <TimerComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />}
+		</Header>
+	);
 };
