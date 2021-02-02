@@ -3,6 +3,7 @@ import { WelcomeModalComponent } from './components/WelcomeModalComponent';
 import { MainImageContainerComponent } from './components/MainImageContainerComponent';
 import { HeaderComponent } from './components/HeaderComponent';
 import { TooltipComponent } from './components/TooltipComponent';
+import { MarkerComponent } from './components/MarkerComponent';
 import { ChoiceFeedback } from './styled-components/tooltipStyles';
 import { ScoreScreenModalComponent } from './components/ScoreScreenModalComponent';
 import { useCheckFirebaseCollection } from './firebase/useCheckFirebaseCollection';
@@ -16,6 +17,9 @@ export default function App() {
   const [tagging, setTagging] = useState(false);
   const [playerChoice, setPlayerChoice] = useState({ correctChoice: false, choiceMade: false, choice: '' })
   const [remainingCharacters, setRemainingCharacters] = useState(['Jak', 'Ratchet', 'Yuna'])
+  const [characters, setCharacters] = useState([{ name: 'Jak', found: false, position: { x: 0, y: 0 } },
+  { name: 'Ratchet', found: false, position: { x: 0, y: 0 } },
+  { name: 'Yuna', found: false, position: { x: 0, y: 0 } }])
   const [time, setTime] = useState(0)
 
   const increaseTime = () => {
@@ -63,10 +67,20 @@ export default function App() {
 
     if (choiceEvaluation) {
       const newRemainingCharacters = [...remainingCharacters];
+      const newCharacters = [...characters]
+      const foundCharacter = { name: targetCharacter, found: true, position: mousePosition };
+
+      newCharacters.forEach((character: any) => {
+        if (character.name === targetCharacter) {
+          newCharacters.splice(newCharacters.indexOf(character), 1, foundCharacter)
+        };
+        return character;
+      });
+
       newRemainingCharacters.splice(newRemainingCharacters.indexOf(targetCharacter), 1)
       setPlayerChoice({ correctChoice: true, choiceMade: true, choice: targetCharacter });
+      setCharacters(newCharacters);
       setRemainingCharacters(newRemainingCharacters);
-      console.log(remainingCharacters)
     }
     else {
       setPlayerChoice({ correctChoice: false, choiceMade: true, choice: targetCharacter });
@@ -125,6 +139,9 @@ export default function App() {
           {playerChoice.correctChoice ? `You found ${playerChoice.choice}. Nice!` : `Thats not ${playerChoice.choice}. Try again!`}
         </ChoiceFeedback>
       )}
+      {characters.map((character) => {
+        return character.found && <MarkerComponent character={character} />
+      })}
       {!gameOver && <MainImageContainerComponent handleClick={handleClick} />}
       {gameOver && (
         <ScoreScreenModalComponent time={time} gameStarted={gameStarted} gameOver={gameOver} />
