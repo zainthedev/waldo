@@ -3,11 +3,11 @@ import { useFirestore } from 'reactfire';
 import { Scoreboard, Score, PlayerScore } from '../styled-components/scoreScreenModalStyles';
 import { ScoreComponent } from './ScoreComponent';
 
-export type ScoreboardComponentProps = {
+export type ScoreboardProps = {
     playerName: string,
 };
 
-export const ScoreboardComponent = ({ playerName }: ScoreboardComponentProps) => {
+export const ScoreboardComponent = ({ playerName }: ScoreboardProps) => {
     const [users, setUsers] = useState([]);
 
     //Create the query to load the users and listen for new ones

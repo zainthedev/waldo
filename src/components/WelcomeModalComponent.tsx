@@ -5,11 +5,11 @@ import { StartImage } from '../styled-components/imageStyles';
 import { CharacterContainerComponent } from './CharacterContainerComponent';
 import startImage from '../images/start.svg';
 
-export type WelcomeModalComponentProps = {
+export type WelcomeModalProps = {
     startGame: (e: React.MouseEvent) => void,
 };
 
-export const WelcomeModalComponent = ({ startGame }: WelcomeModalComponentProps) => {
+export const WelcomeModalComponent = ({ startGame }: WelcomeModalProps) => {
     return (
         <Modal>
             <WelcomeText>

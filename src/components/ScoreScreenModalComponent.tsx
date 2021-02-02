@@ -6,13 +6,13 @@ import { TimerComponent } from './TimerComponent';
 import { ScoreboardComponent } from './ScoreboardComponent';
 import { checkForBadWords } from '../helper-functions/checkForBadWords';
 
-export type ScoreboardModalComponentProps = {
+export type ScoreboardModalProps = {
     time: number,
     gameStarted: boolean,
     gameOver: boolean,
 };
 
-export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: ScoreboardModalComponentProps) => {
+export const ScoreScreenModalComponent = ({ time, gameStarted, gameOver }: ScoreboardModalProps) => {
     const [playerName, setPlayerName] = useState('');
     const [nameSubmitted, setNameSubmitted] = useState(false);
     const [inputError, setInputError] = useState({ error: false, badWord: false })

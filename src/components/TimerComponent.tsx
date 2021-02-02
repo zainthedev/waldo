@@ -1,8 +1,8 @@
 import { Timer } from '../styled-components/headerStyles';
 import { renderTime } from '../helper-functions/renderTime';
-import { HeaderComponentProps } from '../types';
+import { HeaderProps } from '../types';
 
-export const TimerComponent = ({ time }: HeaderComponentProps) => {
+export const TimerComponent = ({ time }: HeaderProps) => {
     return (
         <Timer>
             {renderTime(time)}

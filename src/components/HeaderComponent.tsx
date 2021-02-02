@@ -2,9 +2,9 @@ import { Children } from 'react';
 import { Header } from '../styled-components/headerStyles';
 import { TimerComponent } from './TimerComponent';
 import { CharacterContainerComponent } from './CharacterContainerComponent';
-import { HeaderComponentProps } from '../types';
+import { HeaderProps } from '../types';
 
-export const HeaderComponent = ({ time, gameStarted, gameOver }: HeaderComponentProps) => {
+export const HeaderComponent = ({ time, gameStarted, gameOver }: HeaderProps) => {
     return (
         <Header>
             <CharacterContainerComponent container={'header'} children={Children} />

@@ -7,12 +7,12 @@ import jakImageHeader from '../images/jakHeader.svg';
 import ratchetImageHeader from '../images/ratchetHeader.svg';
 import yunaImageHeader from '../images/yunaHeader.svg';
 
-export type CharacterContainerComponentProps = {
+export type CharacterContainerProps = {
     children: ReactChildren,
     container: string,
 };
 
-export const CharacterContainerComponent = ({ container }: CharacterContainerComponentProps) => {
+export const CharacterContainerComponent = ({ container }: CharacterContainerProps) => {
     return (
         <CharacterContainer>
             <CharacterImageContainer>
