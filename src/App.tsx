@@ -140,7 +140,7 @@ export default function App() {
         </ChoiceFeedback>
       )}
       {characters.map((character) => {
-        return character.found && <MarkerComponent character={character} />
+        return character.found && <MarkerComponent key={character.name} character={character} />
       })}
       {!gameOver && <MainImageContainerComponent handleClick={handleClick} />}
       {gameOver && (
