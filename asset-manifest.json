@@ -5,8 +5,8 @@
     "functions.js": "/waldo/static/js/functions.70df6cba.chunk.js",
     "functions.js.map": "/waldo/static/js/functions.70df6cba.chunk.js.map",
     "main.css": "/waldo/static/css/main.07525548.chunk.css",
-    "main.js": "/waldo/static/js/main.4f8a3a20.chunk.js",
-    "main.js.map": "/waldo/static/js/main.4f8a3a20.chunk.js.map",
+    "main.js": "/waldo/static/js/main.5c6f5437.chunk.js",
+    "main.js.map": "/waldo/static/js/main.5c6f5437.chunk.js.map",
     "runtime-main.js": "/waldo/static/js/runtime-main.cda8bfa3.js",
     "runtime-main.js.map": "/waldo/static/js/runtime-main.cda8bfa3.js.map",
     "static/js/4.5b22663c.chunk.js": "/waldo/static/js/4.5b22663c.chunk.js",
@@ -36,19 +36,19 @@
     "static/js/8.268ab847.chunk.js.LICENSE.txt": "/waldo/static/js/8.268ab847.chunk.js.LICENSE.txt",
     "static/js/9.95e7db1e.chunk.js.LICENSE.txt": "/waldo/static/js/9.95e7db1e.chunk.js.LICENSE.txt",
     "static/js/functions.70df6cba.chunk.js.LICENSE.txt": "/waldo/static/js/functions.70df6cba.chunk.js.LICENSE.txt",
-    "static/media/jak.3a9e1449.svg": "/waldo/static/media/jak.3a9e1449.svg",
-    "static/media/jakHeader.230994f0.svg": "/waldo/static/media/jakHeader.230994f0.svg",
+    "static/media/jak.57549b7d.svg": "/waldo/static/media/jak.57549b7d.svg",
+    "static/media/jakHeader.6348a4ba.svg": "/waldo/static/media/jakHeader.6348a4ba.svg",
     "static/media/ps2Image.3a523648.webp": "/waldo/static/media/ps2Image.3a523648.webp",
-    "static/media/ratchet.e122121b.svg": "/waldo/static/media/ratchet.e122121b.svg",
-    "static/media/ratchetHeader.f58d040d.svg": "/waldo/static/media/ratchetHeader.f58d040d.svg",
-    "static/media/start.1ba7996c.svg": "/waldo/static/media/start.1ba7996c.svg",
-    "static/media/yuna.73a95346.svg": "/waldo/static/media/yuna.73a95346.svg",
-    "static/media/yunaHeader.53c7403c.svg": "/waldo/static/media/yunaHeader.53c7403c.svg"
+    "static/media/ratchet.23067973.svg": "/waldo/static/media/ratchet.23067973.svg",
+    "static/media/ratchetHeader.1867813b.svg": "/waldo/static/media/ratchetHeader.1867813b.svg",
+    "static/media/start.e80fc806.svg": "/waldo/static/media/start.e80fc806.svg",
+    "static/media/yuna.52b57335.svg": "/waldo/static/media/yuna.52b57335.svg",
+    "static/media/yunaHeader.ec29f948.svg": "/waldo/static/media/yunaHeader.ec29f948.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cda8bfa3.js",
     "static/js/4.5b22663c.chunk.js",
     "static/css/main.07525548.chunk.css",
-    "static/js/main.4f8a3a20.chunk.js"
+    "static/js/main.5c6f5437.chunk.js"
   ]
 }
