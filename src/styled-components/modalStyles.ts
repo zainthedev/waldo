@@ -19,7 +19,7 @@ export const Modal = styled.div`
     background: linear-gradient(180deg, rgba(99,101,176,1) 0%, rgba(52,170,231,1) 70%, rgba(56,191,235,1) 100%);
     @media (max-width: 768px) {
         width: auto;
-        margin-top: 10px;
+        margin-top: 8vh;
         min-height: 90vh;
         min-width: 100vw;
     };
