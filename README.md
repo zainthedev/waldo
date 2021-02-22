@@ -6,6 +6,8 @@ The top 10 fastest players get their names displayed on the scoreboard at the en
 
 Built with React, TypeScript and Firebase.
 
+[View live](https://zainthedev.github.io/waldo/)
+
 ## Screenshots
 
 <img src="https://i.imgur.com/36t1h4t.png" width="45%"></img> <img src="https://i.imgur.com/xbn1dJ9.png" width="45%"></img>
