@@ -20,4 +20,6 @@ As this was my first time using TypeScript, it was rather daunting at first. How
 
 Figuring out how to account for mouseclick position with different screen widths was unexpectedly challenging, but was quickly solved with some Google-fu and simple math.
 
+Another challenge was the sizing of the main image. I made use of an AI upscaler and Google's [Squoosh](https://squoosh.app/) to resize and compress the image to a size that would perfectly stretch across even 4k monitors, but also stay small in size. On browsers that support the .webp filetype, the image size comes in at just 869.7kb - tiny, considering its gigantic resolution.
+
 Built with TypeScript, React and Firebase. TypeScript for the learning experience (and, of course, the benefits of strong typing), React for its speed and ease of use and Firebase to keep player scores.
